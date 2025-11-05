@@ -1,0 +1,195 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Publicar Aplicações Web - Revisão Completa</title>
+  <style>
+    /* ====== ESTILO GERAL ====== */
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+      font-family: "Poppins", sans-serif;
+    }
+
+    body {
+      background-color: #f5f7fa;
+      color: #333;
+      line-height: 1.6;
+    }
+
+    header {
+      background-color: #ba00f3;
+      color: #fff;
+      text-align: center;
+      padding: 30px 10px;
+    }
+
+    header h1 {
+      font-size: 2rem;
+      margin-bottom: 10px;
+    }
+
+    nav a {
+      color: white;
+      margin: 0 12px;
+      text-decoration: none;
+      font-weight: bold;
+    }
+
+    nav a:hover {
+      text-decoration: underline;
+    }
+
+    section {
+      max-width: 900px;
+      margin: 50px auto;
+      padding: 20px;
+      background: white;
+      border-radius: 12px;
+      box-shadow: 0 0 8px rgba(0, 0, 0, 0.1);
+    }
+
+    h2 {
+      color: #df00f3;
+      margin-bottom: 10px;
+    }
+
+    ul {
+      margin-left: 20px;
+      margin-top: 10px;
+    }
+
+    li {
+      margin-bottom: 8px;
+    }
+
+    .highlight {
+      background-color: #e8f1ff;
+      padding: 10px;
+      border-left: 5px solid #ba00f3;
+      margin-top: 10px;
+      border-radius: 5px;
+    }
+
+    footer {
+      text-align: center;
+      background-color: #ba00f3;
+      color: white;
+      padding: 20px;
+      margin-top: 40px;
+    }
+
+    button {
+      background-color: #d700f3;
+      color: white;
+      border: none;
+      padding: 10px 20px;
+      border-radius: 8px;
+      cursor: pointer;
+      margin-top: 10px;
+    }
+
+    button:hover {
+      background-color: #c100b7;
+    }
+
+    #status {
+      font-weight: bold;
+      margin-top: 10px;
+    }
+  </style>
+</head>
+
+<body>
+  <header>
+    <h1>Publicar Aplicações Web</h1>
+    <nav>
+      <a href="#sobre">Sobre a Matéria</a>
+      <a href="#etapas">Etapas de Publicação</a>
+      <a href="#conceitos">Conceitos Importantes</a>
+      <a href="#contato">Contato</a>
+    </nav>
+  </header>
+
+  <section id="sobre">
+    <h2>Sobre a Matéria</h2>
+    <p>
+      A unidade curricular <strong>Publicar Aplicações Web</strong> ensina os alunos a criar, configurar e publicar sites
+      e aplicações na internet. Nela aprendemos a estruturar páginas com HTML, aplicar estilos com CSS, usar JavaScript
+      para interatividade e publicar nossos projetos em plataformas como o <strong>Vercel</strong> e o <strong>GitHub</strong>.
+    </p>
+    <div class="highlight">
+      💡 O principal objetivo da disciplina é compreender como transformar um projeto local em um site acessível online.
+    </div>
+  </section>
+
+  <section id="etapas">
+    <h2>Etapas para Publicar um Site</h2>
+    <ol>
+      <li><strong>1. Criação do site:</strong> desenvolver o conteúdo usando HTML, CSS e JavaScript.</li>
+      <li><strong>2. Versionamento:</strong> salvar e organizar o código com o Git.</li>
+      <li><strong>3. Envio ao GitHub:</strong> criar um repositório e subir os arquivos.</li>
+      <li><strong>4. Publicação:</strong> conectar o repositório ao Vercel e publicar o site.</li>
+      <li><strong>5. Testes:</strong> acessar o link final e verificar se tudo funciona corretamente.</li>
+    </ol>
+  </section>
+
+  <section id="conceitos">
+    <h2>Conceitos Importantes</h2>
+    <ul>
+      <li><strong>HTML (HyperText Markup Language):</strong> é a estrutura do site, define títulos, textos, imagens e links.</li>
+      <li><strong>CSS (Cascading Style Sheets):</strong> é o estilo do site — cores, tamanhos, fontes e espaçamento.</li>
+      <li><strong>JavaScript:</strong> dá interatividade ao site, permitindo ações e respostas do usuário.</li>
+      <li><strong>Git:</strong> sistema de controle de versão que registra todas as alterações feitas no projeto.</li>
+      <li><strong>GitHub:</strong> plataforma online para armazenar e compartilhar códigos.</li>
+      <li><strong>Vercel:</strong> ferramenta que publica o site diretamente do GitHub para a web.</li>
+    </ul>
+
+    <div class="highlight">
+      🌍 A publicação web permite que pessoas do mundo inteiro acessem o seu projeto com apenas um link!
+    </div>
+  </section>
+
+  <section id="contato">
+    <h2>Simulação de Contato</h2>
+    <p>Deixe seu nome e uma mensagem abaixo para simular o envio de uma dúvida sobre a matéria:</p>
+    <form id="formContato">
+      <label for="nome">Nome:</label>
+      <input type="text" id="nome" required>
+
+      <label for="mensagem">Mensagem:</label>
+      <textarea id="mensagem" rows="4" required></textarea>
+
+      <button type="submit">Enviar Mensagem</button>
+    </form>
+    <p id="status"></p>
+  </section>
+
+  <footer>
+    <p>Desenvolvido por <strong>Ana Clara Narloch Meinerz</strong> © 2025</p>
+  </footer>
+
+  <script>
+    // Função simples de simulação de envio de mensagem
+    const form = document.getElementById("formContato");
+    const status = document.getElementById("status");
+
+    form.addEventListener("submit", (e) => {
+      e.preventDefault();
+      const nome = document.getElementById("nome").value;
+      const mensagem = document.getElementById("mensagem").value;
+
+      if (nome && mensagem) {
+        status.textContent = `Mensagem enviada com sucesso! Obrigado, ${nome}!`;
+        status.style.color = "green";
+        form.reset();
+      } else {
+        status.textContent = "Por favor, preencha todos os campos.";
+        status.style.color = "red";
+      }
+    });
+  </script>
+</body>
+</html>
